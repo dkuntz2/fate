@@ -1,0 +1,8 @@
+#!/bin/bash
+
+docker run --rm --name=psql \
+  -p 5432:5432 \
+  -e POSTGRES_PASSWORD=psqlpw \
+  -e POSTGRES_USER=fate \
+  -e POSTGRES_DB=fate \
+  -d postgres

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+PGPASSWORD=psqlpw psql -h localhost -U fate fate
