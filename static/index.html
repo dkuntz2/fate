@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fate!</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="/js/main.js"></script>
+
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="identify" v-if="showIdentity">
+        <form id="loginForm">
+          <h1>Who Are You?</h1>
+          <input id="username" type="text" placeholder="yourname" /><br>
+          <input type="submit" value="Go!" />
+        </form>
+      </div>
+
+      <div id="main" v-show="showMain">
+        <section id="info-stream">
+          <dice-roll v-for="roll in rolls" v-bind:roll="roll"></dice-roll>
+        </section>
+
+        <div class="roller">
+          <form id="rollForm">
+            <label for="numDice">Roll</label> <input type="number" name="numDice" /> Dice <input type="submit" value="Roll em" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

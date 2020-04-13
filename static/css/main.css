@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@900&family=Space+Mono:wght@400;700&display=swap");
+html, body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: "Space Mono";
+}
+
+#main #info-stream {
+  width: 330px;
+  padding-left: 20px;
+  margin: 2em auto 120px;
+}
+#main #info-stream .roll {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+#main #info-stream .roll ul {
+  font-size: 16px;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#main #info-stream .roll ul li {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background: black;
+  margin-right: 5px;
+  color: white;
+}
+#main #info-stream .roll ul li p {
+  font-family: "Source Code Pro";
+  margin: auto;
+  font-weight: bold;
+  font-size: 48px;
+  margin-top: -11px;
+}
+#main .roller {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-top: 3px solid #afafaf;
+  background: #c8c8c8;
+}
+#main .roller #rollForm {
+  padding: 2em;
+}
+#main .roller #rollForm input[type=number] {
+  width: 2em;
+  text-align: center;
+  background: transparent;
+}
+
+#identify {
+  width: 500px;
+  margin: 2em auto;
+  text-align: center;
+}
+#identify input {
+  width: 100%;
+  font-size: 20px;
+}
+#identify input[type=text] {
+  text-align: center;
+  margin-bottom: 10px;
+}
+#identify input[type=submit] {
+  padding: 5px;
+  border: 5px solid black;
+  font-family: "Space Mono";
+  background: #c8c8c8;
+  margin-bottom: 7px;
+}
+#identify input[type=submit]:hover {
+  background: #afafaf;
+}
+#identify input[type=submit]:active {
+  margin-bottom: 0px;
+  margin-top: 7px;
+  outline: none !important;
+}
+#identify input[type=submit]:focus {
+  outline: none;
+}
+
+input[type=text], input[type=number] {
+  border: 0px solid black;
+  border-bottom-width: 3px;
+  font-size: 16px;
+  padding: 0 0 3px 0;
+  font-family: "Space Mono";
+}
+
+/*# sourceMappingURL=main.css.map */
