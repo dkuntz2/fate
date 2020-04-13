@@ -1,1 +1,1 @@
-web: cmd/fate/main.go
+web: bin/fate
