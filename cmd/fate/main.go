@@ -11,7 +11,7 @@ func main() {
 	f := fate.New()
 	f.Run()
 
-	listenSpec := fmt.Sprintf(":%s", os.Getenv("PORT"))
+	listenSpec := fmt.Sprintf("0.0.0.0:%s", os.Getenv("PORT"))
 	fmt.Printf("Starting server on http://%s\n", listenSpec)
 	http.ListenAndServe(listenSpec, f.Router())
 }
