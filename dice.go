@@ -10,27 +10,25 @@ func init() {
 }
 
 type RollResult struct {
-	DieCount    int
 	TotalResult int
 	Rolls       []string
 }
 
-func Roll(numDice int) *RollResult {
+func Roll() *RollResult {
 	result := &RollResult{
-		DieCount:    numDice,
 		TotalResult: 0,
-		Rolls:       []string{},
+		Rolls:       make([]string, 4),
 	}
 
-	for i := 0; i < numDice; i++ {
+	for i := 0; i < 4; i++ {
 		thisRoll := rand.Intn(3) - 1
 		switch thisRoll {
 		case -1:
-			result.Rolls = append(result.Rolls, "-")
+			result.Rolls[i] = "-"
 		case 0:
-			result.Rolls = append(result.Rolls, " ")
+			result.Rolls[i] = " "
 		case 1:
-			result.Rolls = append(result.Rolls, "+")
+			result.Rolls[i] = "+"
 		}
 
 		result.TotalResult += thisRoll

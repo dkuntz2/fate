@@ -31,8 +31,7 @@ type wsBroadcast struct {
 }
 
 type rollMessage struct {
-	Who     string `json:"who"`
-	NumDice int    `json:"number_of_dice"`
+	Who string `json:"who"`
 }
 
 type rollResult struct {
@@ -149,7 +148,7 @@ func (client *wsClient) reader() {
 				continue
 			}
 
-			roll := Roll(rollMsg.NumDice)
+			roll := Roll()
 			brdMsg := &wsBroadcast{
 				Type: "roll",
 				Message: &rollResult{

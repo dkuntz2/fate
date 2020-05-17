@@ -7,7 +7,7 @@ html, body {
 }
 
 #main #info-stream {
-  width: 330px;
+  width: 250px;
   padding-left: 20px;
   margin: 2em auto 120px;
 }
@@ -47,15 +47,10 @@ html, body {
   display: flex;
   justify-content: center;
   border-top: 3px solid #afafaf;
-  background: #c8c8c8;
+  background: #e6e6e6;
 }
 #main .roller #rollForm {
-  padding: 2em;
-}
-#main .roller #rollForm input[type=number] {
-  width: 2em;
-  text-align: center;
-  background: transparent;
+  padding: 1.5em;
 }
 
 #identify {
@@ -71,22 +66,24 @@ html, body {
   text-align: center;
   margin-bottom: 10px;
 }
-#identify input[type=submit] {
-  padding: 5px;
+
+input[type=submit] {
+  padding: 5px 1em;
   border: 5px solid black;
   font-family: "Space Mono";
+  font-size: 20px;
   background: #c8c8c8;
   margin-bottom: 7px;
 }
-#identify input[type=submit]:hover {
+input[type=submit]:hover {
   background: #afafaf;
 }
-#identify input[type=submit]:active {
+input[type=submit]:active {
   margin-bottom: 0px;
   margin-top: 7px;
   outline: none !important;
 }
-#identify input[type=submit]:focus {
+input[type=submit]:focus {
   outline: none;
 }
 

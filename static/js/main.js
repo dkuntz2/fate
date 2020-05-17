@@ -24,7 +24,6 @@ function handleMessage(message) {
 
 function setupRollerForm(selector) {
   const form = document.querySelector(selector)
-  const numDice = form.querySelector("input[type=number]")
   form.addEventListener("submit", event => {
     event.preventDefault()
 
@@ -32,24 +31,10 @@ function setupRollerForm(selector) {
       alert("Connection is closed :(")
       return
     }
-
-    const numDiceVal = numDice.value
-    if (numDiceVal === "") {
-      alert("no number")
-      return
-    }
-
-    const number = parseInt(numDiceVal)
-    if (number < 1) {
-      alert("You must roll at least 1 dice")
-      return
-    }
-
     ws.send(JSON.stringify({
       type: "roll",
       message: {
         who: data.who,
-        number_of_dice: number,
       },
     }))
   })
@@ -92,12 +77,12 @@ Vue.component("dice-roll", {
     </div>
   `,
   mounted: function() {
-    console.log("created dice roll", this.$el)
+    // console.log("created dice roll", this.$el)
     window.scrollTo(0, this.$el.offsetTop)
   }
 })
 
-document.addEventListener("DOMContentLoaded", event => {
+function establishConnection() {
   const wsProto = (() => {
 	if (location.protocol == "https:") {
 	  return "wss://"
@@ -110,6 +95,17 @@ document.addEventListener("DOMContentLoaded", event => {
   ws.addEventListener("message", event => {
     handleMessage(JSON.parse(event.data))
   })
+
+  ws.addEventListener("close", event => {
+    setTimeout(() => {
+      establishConnection()
+    }, 250)
+  })
+
+}
+
+document.addEventListener("DOMContentLoaded", event => {
+  establishConnection()
 
   app = new Vue({
     el: "#app",
